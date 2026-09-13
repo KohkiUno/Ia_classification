@@ -23,8 +23,6 @@ Ia_classification/
 ├── appendix1_hyperparameters.ipynb
 ├── appendix2_pca.ipynb
 ├── appendix3_plot_preprocessing.ipynb
-├── appendix4_apply_ml_multiD.ipynb
-├── appendix5_plot_multiD.ipynb
 │
 ├── review1_preprocessing.ipynb
 ├── review2_plot_preprocessing.ipynb
@@ -32,6 +30,8 @@ Ia_classification/
 ├── review4_plot_hyperparameters.ipynb
 ├── review5_phase.ipynb
 ├── review6_2011fe.ipynb
+├── review7_apply_ml_multiD.ipynb
+├── review8_plot_multiD.ipynb
 │
 ├── requirements.txt
 └── README.md

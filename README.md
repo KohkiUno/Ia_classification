@@ -125,9 +125,9 @@ Run the notebooks from the repository root directory in the following order:
         ↓
 1_preprocessing.ipynb
         ↓
-appendix3_plot_preprocessing.ipynb
-        ↓
 2_apply_ml.ipynb
+        ↓
+appendix3_plot_preprocessing.ipynb
         ↓
 3_plot.ipynb
         ↓

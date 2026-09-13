@@ -1,8 +1,23 @@
-**"Identifying Two Branches behind Type Ia Supernovae with Machine Learning"**
+# Identifying Two Branches behind Type Ia Supernovae with Machine Learning
 by Kohki Uno, Keiichi Maeda, and Mao Ogawa.
 
+Code and data products associated with the manuscript
 
-## Repository structure
+## Reproducibility Note
+
+**All Jupyter notebooks in this repository have already been executed, and their outputs are retained in the notebooks.**
+
+The notebooks can also be rerun using the data and software environment provided in this repository. 
+The main analysis takes only a few minutes on a standard desktop or laptop computer and does not require a GPU or other specialized computing hardware.
+
+
+## Overview
+
+This repository contains the Python code and data products used for the spectral preprocessing, dimensionality reduction, clustering, statistical analyses, robustness tests, and visualization presented in the manuscript.
+The main machine-learning analysis uses 119 Type Ia supernova spectra near maximum light. After preprocessing, each spectrum is represented by 675 flux values over the rest-frame wavelength range 5100--6450 Å.
+
+
+## Repository Structure
 ```text
 Ia_classification/
 │
@@ -38,7 +53,7 @@ Ia_classification/
 ```
 
 
-## Software environment
+## Software Environment
 
 The analysis used for the manuscript was performed with:
 
@@ -63,3 +78,36 @@ astropy
 specutils
 tqdm
 ```
+
+No GPU or other non-standard hardware is required.
+
+
+
+## Main Analysis
+
+0_make_params.ipynb
+        ↓
+1_preprocessing.ipynb
+        ↓
+appendix3_plot_preprocessing.ipynb
+        ↓
+2_apply_ml.ipynb
+        ↓
+3_plot.ipynb
+        ↓
+4_statistics.ipynb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

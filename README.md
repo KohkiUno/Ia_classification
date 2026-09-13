@@ -66,7 +66,7 @@ Ia_classification/
 The analysis used for the manuscript was performed with:
 
 - Python 3.8.5
-- macOS (x86_64)
+- macOS (Intel/x86_64)
 
 The released environment has been tested on macOS (MacBook Pro 2018, Intel/x86_64).
 

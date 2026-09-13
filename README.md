@@ -116,6 +116,21 @@ jupyter notebook
 
 Installing takes a few minites.
 
+## Demo
+
+A simple demonstration of the main machine-learning analysis can be performed by opening:
+
+```text
+2_apply_ml.ipynb
+```
+
+and running all cells using the processed data already included in this repository.
+
+The expected output is already retained in the notebook for comparison.
+
+The calculation typically takes only a few minutes on a standard desktop or laptop computer.
+
+
 ## Main Analysis
 
 Run the notebooks from the repository root directory in the following order:
@@ -140,20 +155,7 @@ The main machine-learning analysis is performed in `2_apply_ml.ipynb`, which app
 
 The expected outputs, including the UMAP representation, cluster assignments, statistical results, and figures, are retained in the corresponding executed notebooks and output directories.
 
-
-## Demo
-
-A simple demonstration of the main machine-learning analysis can be performed by opening:
-
-```text
-2_apply_ml.ipynb
-```
-
-and running all cells using the processed data already included in this repository.
-
-The expected output is already retained in the notebook for comparison.
-
-The calculation typically takes only a few minutes on a standard desktop or laptop computer.
+To reproduce the analysis presented in the manuscript, install the dependencies and run the notebooks in the order shown above.
 
 
 ## Additional Analyses
@@ -164,17 +166,10 @@ The additional notebooks contain the robustness and validation analyses used in 
 - UMAP and HDBSCAN hyperparameter tests,
 - PCA analysis,
 - phase-dependence tests,
-- the SN 2011fe test, and
+- SN 2011fe test,
 - higher-dimensional UMAP analyses.
 
 These notebooks have also been executed, and their outputs are retained.
-
-
-## Using the Code
-
-To reproduce the analysis presented in the manuscript, install the dependencies and run the notebooks in the order shown above.
-
-To apply the workflow to another spectral dataset, the input spectra and metadata should be prepared in the same format as the files provided in `spectrum/` and `metadata/`.
 
 
 ## License

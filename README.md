@@ -82,7 +82,6 @@ tqdm
 No GPU or other non-standard hardware is required.
 
 
-
 ## Main Analysis
 
 0_make_params.ipynb
@@ -99,7 +98,14 @@ appendix3_plot_preprocessing.ipynb
 
 
 
+## License
 
+The source code in this repository is released under the MIT License.
+See the `LICENSE` file for details.
+
+This license applies to the source code in this repository and does not
+supersede the terms of use or licensing conditions of the original
+observational data.
 
 
 

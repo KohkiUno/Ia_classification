@@ -3,6 +3,7 @@ pandas==1.5.1
 scipy==1.5.2
 matplotlib==3.6.2
 scikit-learn==0.23.2
+joblib==1.1.1
 umap-learn==0.5.3
 hdbscan==0.8.28
 statsmodels==0.12.0

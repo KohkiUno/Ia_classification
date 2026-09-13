@@ -114,8 +114,6 @@ The notebooks can then be opened with:
 jupyter notebook
 ```
 
-Installing takes a few minites.
-
 ## Demo
 
 A simple demonstration of the main machine-learning analysis can be performed by opening:

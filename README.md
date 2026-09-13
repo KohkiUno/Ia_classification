@@ -81,9 +81,18 @@ tqdm
 
 No GPU or other non-standard hardware is required.
 
+## Installation
+
+Create a Python 3.8.5 environment and install the required packages:
+
+conda create -n ia_classification python=3.8.5
+conda activate ia_classification
+python -m pip install -r requirements.txt
+
 
 ## Main Analysis
 
+Run the notebooks from the repository root directory in the following order:
 0_make_params.ipynb
         ↓
 1_preprocessing.ipynb
@@ -95,7 +104,9 @@ appendix3_plot_preprocessing.ipynb
 3_plot.ipynb
         ↓
 4_statistics.ipynb
+All notebooks have already been executed, and the retained outputs provide the expected results for comparison.
 
+The main machine-learning analysis is performed in `2_apply_ml.ipynb`.
 
 
 ## License

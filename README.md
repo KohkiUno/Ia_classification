@@ -11,7 +11,9 @@ Code and data products associated with the manuscript.
 
 The retained notebook outputs therefore provide the expected results and can be inspected directly without rerunning the analysis.
 
-The notebooks can also be rerun using the data and software environment provided in this repository. The main analysis takes only a few minutes on a standard desktop or laptop computer and does not require a GPU or other specialized computing hardware.
+The notebooks can also be rerun using the data and software environment provided in this repository. 
+
+The main analysis takes only a few minutes on a standard desktop or laptop computer and does not require a GPU or other specialized computing hardware.
 
 
 ## Overview
@@ -66,7 +68,7 @@ The analysis used for the manuscript was performed with:
 - Python 3.8.5
 - macOS (x86_64)
 
-The released environment has been tested on macOS (x86_64).
+The released environment has been tested on macOS (MacBook Pro 2018, Intel/x86_64).
 
 The versions of the Python packages used to reproduce the analysis are specified in `requirements.txt`:
 
@@ -86,7 +88,7 @@ tqdm==4.50.2
 jupyter==1.0.0
 ```
 
-No GPU or other non-standard hardware is required.
+No GPU or other non-standard hardware is required on a standard desktop or laptop computer.
 
 
 ## Installation
@@ -112,6 +114,7 @@ The notebooks can then be opened with:
 jupyter notebook
 ```
 
+Installing takes a few minites.
 
 ## Main Analysis
 

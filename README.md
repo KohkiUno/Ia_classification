@@ -1,23 +1,28 @@
 # Identifying Two Branches behind Type Ia Supernovae with Machine Learning
-by Kohki Uno, Keiichi Maeda, and Mao Ogawa.
 
-Code and data products associated with the manuscript
+by Kohki Uno, Keiichi Maeda, and Mao Ogawa
+
+Code and data products associated with the manuscript.
+
 
 ## Reproducibility Note
 
 **All Jupyter notebooks in this repository have already been executed, and their outputs are retained in the notebooks.**
 
-The notebooks can also be rerun using the data and software environment provided in this repository. 
-The main analysis takes only a few minutes on a standard desktop or laptop computer and does not require a GPU or other specialized computing hardware.
+The retained notebook outputs therefore provide the expected results and can be inspected directly without rerunning the analysis.
+
+The notebooks can also be rerun using the data and software environment provided in this repository. The main analysis takes only a few minutes on a standard desktop or laptop computer and does not require a GPU or other specialized computing hardware.
 
 
 ## Overview
 
 This repository contains the Python code and data products used for the spectral preprocessing, dimensionality reduction, clustering, statistical analyses, robustness tests, and visualization presented in the manuscript.
+
 The main machine-learning analysis uses 119 Type Ia supernova spectra near maximum light. After preprocessing, each spectrum is represented by 675 flux values over the rest-frame wavelength range 5100--6450 Å.
 
 
 ## Repository Structure
+
 ```text
 Ia_classification/
 │
@@ -49,6 +54,7 @@ Ia_classification/
 ├── review8_plot_multiD.ipynb
 │
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
@@ -60,39 +66,58 @@ The analysis used for the manuscript was performed with:
 - Python 3.8.5
 - macOS (x86_64)
 
-The versions of the Python packages used in the analysis are listed in
-`requirements.txt`.
+The released environment has been tested on macOS (x86_64).
 
-The main dependencies are:
+The versions of the Python packages used to reproduce the analysis are specified in `requirements.txt`:
 
 ```text
-numpy
-pandas
-scipy
-matplotlib
-scikit-learn
-umap-learn
-hdbscan
-statsmodels
-astropy
-specutils
-tqdm
+numpy==1.23.4
+pandas==1.5.1
+scipy==1.5.2
+matplotlib==3.6.2
+scikit-learn==0.23.2
+joblib==1.1.1
+umap-learn==0.5.3
+hdbscan==0.8.28
+statsmodels==0.12.0
+astropy==5.1
+specutils==1.1.1
+tqdm==4.50.2
+jupyter==1.0.0
 ```
 
 No GPU or other non-standard hardware is required.
 
+
 ## Installation
 
-Create a Python 3.8.5 environment and install the required packages:
+Create a Python 3.8.5 environment:
 
+```bash
 conda create -n ia_classification python=3.8.5
 conda activate ia_classification
+```
+
+Then install the required packages:
+
+```bash
 python -m pip install -r requirements.txt
+```
+
+Installation typically takes a few minutes on a standard desktop or laptop computer.
+
+The notebooks can then be opened with:
+
+```bash
+jupyter notebook
+```
 
 
 ## Main Analysis
 
 Run the notebooks from the repository root directory in the following order:
+
+```text
 0_make_params.ipynb
         ↓
 1_preprocessing.ipynb
@@ -104,9 +129,49 @@ appendix3_plot_preprocessing.ipynb
 3_plot.ipynb
         ↓
 4_statistics.ipynb
-All notebooks have already been executed, and the retained outputs provide the expected results for comparison.
+```
 
-The main machine-learning analysis is performed in `2_apply_ml.ipynb`.
+All of these notebooks have already been executed, and their outputs are retained for direct comparison.
+
+The main machine-learning analysis is performed in `2_apply_ml.ipynb`, which applies UMAP dimensionality reduction followed by HDBSCAN clustering.
+
+The expected outputs, including the UMAP representation, cluster assignments, statistical results, and figures, are retained in the corresponding executed notebooks and output directories.
+
+
+## Demo
+
+A simple demonstration of the main machine-learning analysis can be performed by opening:
+
+```text
+2_apply_ml.ipynb
+```
+
+and running all cells using the processed data already included in this repository.
+
+The expected output is already retained in the notebook for comparison.
+
+The calculation typically takes only a few minutes on a standard desktop or laptop computer.
+
+
+## Additional Analyses
+
+The additional notebooks contain the robustness and validation analyses used in the manuscript and during peer review, including:
+
+- tests of preprocessing choices,
+- UMAP and HDBSCAN hyperparameter tests,
+- PCA analysis,
+- phase-dependence tests,
+- the SN 2011fe test, and
+- higher-dimensional UMAP analyses.
+
+These notebooks have also been executed, and their outputs are retained.
+
+
+## Using the Code
+
+To reproduce the analysis presented in the manuscript, install the dependencies and run the notebooks in the order shown above.
+
+To apply the workflow to another spectral dataset, the input spectra and metadata should be prepared in the same format as the files provided in `spectrum/` and `metadata/`.
 
 
 ## License
@@ -114,17 +179,4 @@ The main machine-learning analysis is performed in `2_apply_ml.ipynb`.
 The source code in this repository is released under the MIT License.
 See the `LICENSE` file for details.
 
-This license applies to the source code in this repository and does not
-supersede the terms of use or licensing conditions of the original
-observational data.
-
-
-
-
-
-
-
-
-
-
-
+This license applies to the source code in this repository and does not supersede the terms of use or licensing conditions of the original observational data.

@@ -186,6 +186,12 @@ To facilitate reproducibility, all Jupyter notebooks in this repository have bee
 The main analysis is implemented in `2_apply_ml.ipynb`. 
 We additionally reproduced this analysis on *Code Ocean* using Ubuntu 24.04 with an Intel Xeon CPU, while matching our original macOS environment as closely as possible, including the Python version, package versions, and CPU instruction set.
 
+### Code Ocean
+
+A Code Ocean capsule was used for the peer-review reproducibility check and will be made publicly available upon acceptance of the manuscript.
+
+**Code Ocean:** [To be added upon acceptance]
+
 ### Reproducibility within each environment
 
 Repeated executions of the analysis produced bit-for-bit identical results within both the macOS and Code Ocean environments.

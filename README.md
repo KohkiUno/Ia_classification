@@ -196,9 +196,9 @@ Between the two environments, the input data and the structure of the UMAP neare
 
 The only differences identified between the two environments arise from elementary mathematical functions implemented by the underlying operating-system math libraries: Apple `libSystem` on macOS and GNU `glibc` on Linux.
 
-These OS-level rounding differences cannot be completely eliminated when reproducing numerical calculations across different operating systems. For \(10^5\) test values, the outputs of `exp`, `log2`, and `pow` differed by at most 2 units in the last place, corresponding to a relative difference of less than \(3\times10^{-16}\).
+These OS-level rounding differences cannot be completely eliminated when reproducing numerical calculations across different operating systems. For $10^5$ test values, the outputs of `exp`, `log2`, and `pow` differed by at most 2 units in the last place, corresponding to a relative difference of less than $3\times10^{-16}$.
 
-These extremely small numerical differences slightly perturb the edge weights of the UMAP graph. Because UMAP uses stochastic optimization, these perturbations are amplified into a different orientation of the two-dimensional embedding. In the Code Ocean result, the embedding is globally rotated by approximately \(90^\circ\) relative to the original result.
+These extremely small numerical differences slightly perturb the edge weights of the UMAP graph. Because UMAP uses stochastic optimization, these perturbations are amplified into a different orientation of the two-dimensional embedding. In the Code Ocean result, the embedding is globally rotated by $\sim 90$ degrees relative to the original result.
 
 This difference is not scientifically meaningful: the absolute orientation of a UMAP embedding has no physical meaning. What matters for our analysis is the local structure of the data, which is preserved between the macOS and Code Ocean results.
 

@@ -176,3 +176,36 @@ The source code in this repository is released under the MIT License.
 See the `LICENSE` file for details.
 
 This license applies to the source code in this repository and does not supersede the terms of use or licensing conditions of the original observational data.
+
+
+
+## Reproducibility and Cross-Platform Verification
+
+To facilitate reproducibility, all Jupyter notebooks in this repository have been executed with their outputs saved. The complete analysis workflow can therefore be inspected directly from the notebooks.
+
+The main analysis is implemented in `2_apply_ml.ipynb`. 
+We additionally reproduced this analysis on *Code Ocean* using Ubuntu 24.04 with an Intel Xeon CPU, while matching our original macOS environment as closely as possible, including the Python version, package versions, and CPU instruction set.
+
+### Reproducibility within each environment
+
+Repeated executions of the analysis produced bit-for-bit identical results within both the macOS and Code Ocean environments.
+
+Between the two environments, the input data and the structure of the UMAP nearest-neighbour graph (i.e., which supernovae are connected to each other) were also bit-identical, as verified using MD5 checksums of the corresponding intermediate products.
+
+### OS-dependent numerical differences
+
+The only differences identified between the two environments arise from elementary mathematical functions implemented by the underlying operating-system math libraries: Apple `libSystem` on macOS and GNU `glibc` on Linux.
+
+These OS-level rounding differences cannot be completely eliminated when reproducing numerical calculations across different operating systems. For \(10^5\) test values, the outputs of `exp`, `log2`, and `pow` differed by at most 2 units in the last place, corresponding to a relative difference of less than \(3\times10^{-16}\).
+
+These extremely small numerical differences slightly perturb the edge weights of the UMAP graph. Because UMAP uses stochastic optimization, these perturbations are amplified into a different orientation of the two-dimensional embedding. In the Code Ocean result, the embedding is globally rotated by approximately \(90^\circ\) relative to the original result.
+
+This difference is not scientifically meaningful: the absolute orientation of a UMAP embedding has no physical meaning. What matters for our analysis is the local structure of the data, which is preserved between the macOS and Code Ocean results.
+
+Furthermore, changes in the random state and UMAP hyperparameters produce substantially larger variations than these machine-level rounding differences, while our scientific results remain robust to such changes. Our main discussion of the two branches (NV1 vs. NV2) is also supported by statistical tests of galaxy environment, subtype, and photometric properties, which are insensitive to such small numerical differences in the ML embedding.
+
+We therefore conclude that these OS-dependent numerical differences do not affect our scientific conclusions.
+
+### Environment and checksum information
+
+The notebook `2_apply_ml.ipynb` records the hardware, operating system, math library, and software versions used for the analysis. It also records MD5 fingerprints of the mathematical-function outputs and of the UMAP input, graph, and embedding, allowing users to compare their execution environment and intermediate results with our reference environment.
